@@ -34,4 +34,10 @@
 *.opendb
 *.db
 *.sln
+*.ilk
+*.log
+*.pdb
+*.tlog
+*.idb
+*Log.txt
 
