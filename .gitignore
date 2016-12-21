@@ -41,6 +41,6 @@
 *.idb
 *Log.txt
 *.txt
-*.exe
+*.png
 data
 
