@@ -25,7 +25,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		}
 
 		// 裏画面の内容を表画面にコピーする
-		DrawFormatString(0, 0, GetColor(255, 255, 255), "非同期読み込みの数 %d", GetASyncLoadNum());
 		ScreenFlip();
 
 		// Windows 特有の面倒な処理をＤＸライブラリにやらせる
