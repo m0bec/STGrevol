@@ -4,6 +4,8 @@
 
 class define_srsize {
 private:
+	int read_buffer;
+
 	int Read_file();
 	void Define_srsize();
 };
