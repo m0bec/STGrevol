@@ -3,6 +3,7 @@
 void Depiction_loadgr::Asynchronous_load() {
 	SetUseASyncLoadFlag(true);
 	loadgr = LoadGraph("Graph/load.png");
+	titlegr = LoadGraph("Graph/title.png");
 	SetUseASyncLoadFlag(false);
 }
 
@@ -13,3 +14,4 @@ void Depiction_loadgr::Draw_loadgr() {
 		DrawGraph(0, 0, loadgr, true);
 	}
 }
+

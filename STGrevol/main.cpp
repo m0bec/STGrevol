@@ -8,12 +8,21 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// ＤＸライブラリ初期化処理
 	if (DxLib_Init() == -1) return -1;
 
+	depiction_loadgr.Asynchronous_load();
+
 	// グラフィックの描画先を裏画面にセット
 	SetDrawScreen(DX_SCREEN_BACK);
 
 	while (1) {
 		// 画面を初期化(真っ黒にする)
 		ClearDrawScreen();
+
+		if (GetASyncLoadNum() == 0) {
+
+		}
+		else {
+			depiction_loadgr.Draw_loadgr();
+		}
 
 		// 裏画面の内容を表画面にコピーする
 		ScreenFlip();
