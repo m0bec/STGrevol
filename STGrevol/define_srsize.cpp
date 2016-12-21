@@ -45,7 +45,3 @@ void Define_srsize::Srsize() {
 		enlargement_factor = 2.0;
 	}
 }
-
-double Define_srsize::Get_enlargement_factor() {
-	return Get_enlargement_factor();
-}

@@ -17,14 +17,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		// 画面を初期化(真っ黒にする)
 		ClearDrawScreen();
 
-		if (GetASyncLoadNum() == 0) {
-
+		if (GetASyncLoadNum() != 0) {
+			depiction_loadgr.Draw_loadgr();
 		}
 		else {
-			depiction_loadgr.Draw_loadgr();
+			title.Control();
 		}
 
 		// 裏画面の内容を表画面にコピーする
+		DrawFormatString(0, 0, GetColor(255, 255, 255), "非同期読み込みの数 %d", GetASyncLoadNum());
 		ScreenFlip();
 
 		// Windows 特有の面倒な処理をＤＸライブラリにやらせる

@@ -8,7 +8,6 @@ void Depiction_loadgr::Asynchronous_load() {
 }
 
 void Depiction_loadgr::Draw_loadgr() {
-	Asynchronous_load();
 	if (CheckHandleASyncLoad(loadgr) == false)
 	{
 		DrawGraph(0, 0, loadgr, true);
