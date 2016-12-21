@@ -1,8 +1,11 @@
 #pragma once
 #include "DXLib.h"
 
-class depiction_loadgr {
+class Depiction_loadgr {
 public:
-	void asynchronous_load();
+	void Draw_loadgr();
+	
 private:
+	int loadgr;
+	void Asynchronous_load();
 };
