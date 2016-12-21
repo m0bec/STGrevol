@@ -1,10 +1,9 @@
-#include "DxLib.h"
+#include "main.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-	ChangeWindowMode(true);
-	// 画面モードの設定
-	SetGraphMode(960, 720, 16);
+
+	define_srsize.Srsize();
 
 	// ＤＸライブラリ初期化処理
 	if (DxLib_Init() == -1) return -1;
