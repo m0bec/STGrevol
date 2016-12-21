@@ -34,11 +34,18 @@ void Define_srsize::Srsize() {
 
 	if (define_srsize_prm % 10 == 1) {
 		SetGraphMode(640, 480, 16);
+		enlargement_factor = 1.0;
 	}
 	else if (define_srsize_prm % 10 == 2) {
 		SetGraphMode(960, 720, 16);
+		enlargement_factor = 1.5;
 	}
 	else if (define_srsize_prm % 10 == 3) {
 		SetGraphMode(1280, 960, 16);
+		enlargement_factor = 2.0;
 	}
+}
+
+double Define_srsize::Get_enlargement_factor() {
+	return Get_enlargement_factor();
 }
