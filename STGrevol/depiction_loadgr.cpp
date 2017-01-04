@@ -1,4 +1,4 @@
-#include "depicyion_loadgr.h"
+#include "depiction_loadgr.h"
 
 Depiction_loadgr::Depiction_loadgr(double *define_srsize_) {
 	define_srsize = define_srsize_;
