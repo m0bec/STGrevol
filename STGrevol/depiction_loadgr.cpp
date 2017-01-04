@@ -14,7 +14,6 @@ void Depiction_loadgr::Draw_loadgr() {
 	if (CheckHandleASyncLoad(loadgr) == false)
 	{
 		DrawRotaGraph2(0, 0, 0, 0, *define_srsize, 0.0, loadgr, true, false);
-		DrawGraph(0, 0, loadgr, true);
 	}
 }
 
