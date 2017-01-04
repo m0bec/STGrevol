@@ -23,6 +23,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		}
 		else {
 			title.Drawgr();
+			startmode_select.Drawgr();
 		}
 
 		// 裏画面の内容を表画面にコピーする

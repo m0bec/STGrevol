@@ -1,13 +1,10 @@
 #pragma once
 #include "DxLib.h"
-#include <string>
+#include "base_drawgraph.h"
 
-class Startmode_select {
+class Startmode_select : public Base_drawgraph {
 public:
-
-
-	Startmode_select(std::string filename_);
+	using Base_drawgraph::Base_drawgraph;
 
 private:
-	std::string filename;
 };

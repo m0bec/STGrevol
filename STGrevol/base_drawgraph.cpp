@@ -11,5 +11,6 @@ Base_drawgraph::Base_drawgraph(double *define_srsize_, int *gr_, int draw_x_, in
 }
 
 void Base_drawgraph::Drawgr() {
-	DrawRotaGraph2(draw_x, draw_y, rota_cx, rota_cy, *p_define_srsize, rota_radian, *p_gr, true, false);
+	DrawRotaGraph2(static_cast<int>(draw_x * *p_define_srsize), static_cast<int>(draw_y * *p_define_srsize), static_cast<int>(rota_cx * *p_define_srsize), 
+		static_cast<int>(rota_cy * *p_define_srsize), *p_define_srsize, rota_radian, *p_gr, true, false);
 }
