@@ -3,7 +3,6 @@
 
 class Depiction_loadgr {
 public:
-	int titlegr;
 
 	Depiction_loadgr(double *define_srsize_);
 	void Draw_loadgr();
