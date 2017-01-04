@@ -3,13 +3,11 @@
 
 class Loadgr {
 public:
-	Loadgr();
-	int Titlegr() { return titlegr; }
-	int Startgr() { return startgr; }
-	int Exitgr() { return exitgr; }
-
-private:
+	void Synchronizing_loadgr();
 	int titlegr;
 	int startgr;
 	int exitgr;
+	
+private:
+	
 };

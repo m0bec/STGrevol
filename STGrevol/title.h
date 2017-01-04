@@ -4,8 +4,7 @@
 
 class Title : public Base_drawgraph{
 public:
-	void Control();
-
+	using Base_drawgraph::Base_drawgraph;
 private:
 
 };

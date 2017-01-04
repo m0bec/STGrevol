@@ -9,6 +9,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	if (DxLib_Init() == -1) return -1;
 
 	depiction_loadgr.Asynchronous_load();
+	loadgr.Synchronizing_loadgr();
 
 	// グラフィックの描画先を裏画面にセット
 	SetDrawScreen(DX_SCREEN_BACK);
@@ -21,7 +22,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			depiction_loadgr.Draw_loadgr();
 		}
 		else {
-			title.Control();
+			title.Drawgr();
 		}
 
 		// 裏画面の内容を表画面にコピーする
