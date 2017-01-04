@@ -1,12 +1,11 @@
 #pragma once
 #include "DXLib.h"
+#include "base_drawgraph.h"
 
-class Title {
+class Title : public Base_drawgraph{
 public:
-	Title(double *define_srsize_, int *titlegr_);
 	void Control();
+
 private:
-	void Drawtitle();
-	double *define_srsize;
-	int *titlegr;
+
 };
