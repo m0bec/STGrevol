@@ -9,6 +9,5 @@ public:
 	Startmode_select(std::string filename_);
 
 private:
-
 	std::string filename;
 };

@@ -7,8 +7,8 @@ Depiction_loadgr::Depiction_loadgr(double *define_srsize_) {
 void Depiction_loadgr::Asynchronous_load() {
 	SetUseASyncLoadFlag(true);
 	loadgr = LoadGraph("Graph/load.png");
-	titlegr = LoadGraph("Graph/title.png");
 	SetUseASyncLoadFlag(false);
+	titlegr = LoadGraph("Graph/title.png");
 }
 
 void Depiction_loadgr::Draw_loadgr() {
