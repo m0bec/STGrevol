@@ -22,7 +22,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			depiction_loadgr.Draw_loadgr();
 		}
 		else {
-			titlemenue_system.Select_menue();
+			titlemenue_system.Run();
 			title.Drawgr();
 			startmode_select.Drawgr();
 			exitmode_selsct.Drawgr();
