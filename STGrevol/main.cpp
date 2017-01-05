@@ -25,7 +25,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			titlemenue_system.Run();
 			title.Drawgr();
 			startmode_select.Drawgr();
-			exitmode_selsct.Drawgr();
+			exitmode_select.Drawgr();
+
+			exitmode_select.Select_exit();
 		}
 
 		// 裏画面の内容を表画面にコピーする
@@ -36,7 +38,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		if (ProcessMessage() < 0) break;
 
 		// もしＥＳＣキーが押されていたらループから抜ける
-		if (CheckHitKey(KEY_INPUT_ESCAPE)) break;
+		if (CheckHitKey(KEY_INPUT_ESCAPE) || exitmode_select.Exit_flag()) break;
 	}
 
 	DxLib_End();

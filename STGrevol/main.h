@@ -15,4 +15,4 @@ Loadgr loadgr;
 Titlemenue_system titlemenue_system(&define_srsize.enlargement_factor);
 Title title(&define_srsize.enlargement_factor, &loadgr.titlegr, 0, 0, 0, 0, 0.0);
 Startmode_select startmode_select(&define_srsize.enlargement_factor, &loadgr.startgr, TITLEMEN_BASIC_PLACE_X, TITLEMEN_BASIC_PLACE_Y, 0, 0, 0.0, &titlemenue_system.select_menue_var, 0);
-Exitmode_select exitmode_selsct(&define_srsize.enlargement_factor, &loadgr.exitgr, TITLEMEN_BASIC_PLACE_X, TITLEMEN_BASIC_PLACE_Y, 0, 0, 0.0, &titlemenue_system.select_menue_var, 1);
+Exitmode_select exitmode_select(&define_srsize.enlargement_factor, &loadgr.exitgr, TITLEMEN_BASIC_PLACE_X, TITLEMEN_BASIC_PLACE_Y, 0, 0, 0.0, &titlemenue_system.select_menue_var, 1);
