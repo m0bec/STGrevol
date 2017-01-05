@@ -1,5 +1,6 @@
 #pragma once
 #include "DxLib.h"
+#include "define_startmenue.h"
 #include <string>
 
 class Base_draw_startmenue {
