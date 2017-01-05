@@ -7,6 +7,8 @@ public:
 	int titlegr;
 	int startgr;
 	int exitgr;
+	int keycongr;
+	int manualgr;
 	
 private:
 	

@@ -26,6 +26,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			title.Drawgr();
 			startmode_select.Drawgr();
 			exitmode_select.Drawgr();
+			manualmode_select.Drawgr();
+			keyconmode_select.Drawgr();
 
 			exitmode_select.Select_exit();
 		}
