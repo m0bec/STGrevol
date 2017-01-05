@@ -14,11 +14,11 @@ void Titlemenue_system::Check_push_bottan() {
 
 void Titlemenue_system::Select_menue() {
 	if (CheckHitKey(KEY_INPUT_UP) && push_bottan_flag == false) {
-		select_menue_var--;
+		select_menue_var++;
 		push_bottan_flag = true;
 	}
 	if (CheckHitKey(KEY_INPUT_DOWN) && push_bottan_flag == false) {
-		select_menue_var++;
+		select_menue_var--;
 		push_bottan_flag = true;
 	}
 
