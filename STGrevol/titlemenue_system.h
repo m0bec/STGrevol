@@ -1,6 +1,6 @@
 #pragma once
-#define MAX_MENUE_NUMBER 2	//ƒƒjƒ…[‚Ì”@
 #include "DxLib.h"
+#include "define_startmenue.h"
 
 class Titlemenue_system {
 public:
