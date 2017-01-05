@@ -24,7 +24,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		else {
 			titlemenue_system.Select_menue();
 			title.Drawgr();
-			startmode_select.Draw_start(&titlemenue_system.select_menue_var);
+			startmode_select.Drawgr();
 			exitmode_selsct.Drawgr();
 		}
 
