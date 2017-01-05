@@ -2,9 +2,9 @@
 #include "DxLib.h"
 #include "base_draw_startmenue.h"
 
-class Exitmode_select : public Base_drawgraph {
+class Exitmode_select : public Base_draw_startmenue {
 public:
-	using Base_drawgraph::Base_drawgraph;
+	using Base_draw_startmenue::Base_draw_startmenue;
 private:
 
 };
