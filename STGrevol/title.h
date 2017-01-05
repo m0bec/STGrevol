@@ -1,10 +1,10 @@
 #pragma once
 #include "DXLib.h"
-#include "base_drawgraph.h"
+#include "base_draw_background.h"
 
-class Title : public Base_drawgraph{
+class Title : public Base_draw_background{
 public:
-	using Base_drawgraph::Base_drawgraph;
+	using Base_draw_background::Base_draw_background;
 private:
 
 };
