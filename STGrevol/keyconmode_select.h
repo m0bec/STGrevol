@@ -1,6 +1,7 @@
 #pragma once
 #include "DxLib.h"
 #include "base_draw_startmenue.h"
+#define KEYCON_MODE_NUM 5
 
 class Keyconmode_select : public Base_draw_startmenue {
 public:

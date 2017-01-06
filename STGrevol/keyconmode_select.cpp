@@ -13,5 +13,17 @@ int Keyconmode_select::Judgeinput_param() {
 }
 
 void Keyconmode_select::Keycon_select() {
-	
+	if ((input_pad & PAD_INPUT_DOWN) == 1) {
+		keycon_select_var++;
+	}
+	else if ((input_pad & PAD_INPUT_UP) == 1) {
+		keycon_select_var--;
+	}
+
+	if (keycon_select_var < 0) {
+		keycon_select_var = 0;
+	}
+	else if (keycon_select_var > KEYCON_MODE_NUM) {
+		keycon_select_var = KEYCON_MODE_NUM;
+	}
 }
