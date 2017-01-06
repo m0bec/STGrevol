@@ -171,3 +171,10 @@ void Keyconmode_select::Keycon_mode() {
 		}*/
 	}
 }
+
+void Keyconmode_select::Run() {
+	Getinput_param();
+	Judgeinput_param();
+	Keycon_select();
+	Keycon_mode();
+}

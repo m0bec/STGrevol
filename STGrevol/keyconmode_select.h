@@ -18,6 +18,8 @@ public:
 	void Judgeinput_param();
 	void Keycon_select();
 	void Keycon_mode();
+	void Exit();
+	void Run();
 	
 private:
 	std::array<int, KEYCON_MENUE_NUMBER + 1> str_input_pad;
