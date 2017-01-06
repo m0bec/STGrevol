@@ -9,6 +9,7 @@ public:
 	int exitgr;
 	int keycongr;
 	int manualgr;
+	int keycon_num;
 	
 private:
 	

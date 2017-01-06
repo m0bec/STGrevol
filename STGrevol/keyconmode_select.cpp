@@ -33,6 +33,7 @@ void Keyconmode_select::Keycon_mode() {
 	for (int i = 0; i < KEYCON_MENUE_NUMBER; i++) {
 		switch (str_input_pad[i]) {
 		case 0:
+			
 			break;
 
 		case 1:
