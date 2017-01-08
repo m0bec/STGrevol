@@ -38,3 +38,4 @@ void Joypad_control::Get_keyconfig() {
 		std::exit(1);
 	}
 }
+
