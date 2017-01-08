@@ -172,6 +172,12 @@ void Keyconmode_select::Keycon_mode() {
 	}
 }
 
+void Keyconmode_select::Exit() {
+	if (keycon_select_var == KEYCON_MODE_NUM) {
+		
+	}
+}
+
 void Keyconmode_select::Run() {
 	Getinput_param();
 	Judgeinput_param();
