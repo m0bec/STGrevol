@@ -50,5 +50,12 @@ void Joypad_control::Check_key(int button_, bool flag_) {
 
 void Joypad_control::Check_allkey() {
 	Check_key(button_shot, shot_flag);
-
+	Check_key(button_bomb, bomb_flag);
+	Check_key(button_slow, slow_flag);
+	Check_key(button_rightturn, rightturn_flag);
+	Check_key(button_leftturn, leftturn_flag);
+	Check_key(PAD_INPUT_UP, upkey_flag);
+	Check_key(PAD_INPUT_DOWN, downkey_flag);
+	Check_key(PAD_INPUT_RIGHT, rightkey_flag);
+	Check_key(PAD_INPUT_LEFT, leftkey_flag);
 }
