@@ -13,6 +13,15 @@ Joypad_control::Joypad_control(std::string filename_) {
 		button_slow = str_button_bin[2];
 		button_rightturn = str_button_bin[3];
 		button_leftturn = str_button_bin[4];
+		shot_flag = false;
+		bomb_flag = false;
+		slow_flag = false;
+		rightturn_flag = false;
+		leftturn_flag = false;
+		upkey_flag = false;
+		downkey_flag = false;
+		rightkey_flag = false;
+		leftkey_flag = false;
 	}
 	catch (int error) {
 		std::cerr << "error " << error << std::endl;
