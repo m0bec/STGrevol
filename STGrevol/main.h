@@ -10,8 +10,11 @@
 #include "titlemenue_system.h"
 #include "keyconmode_select.h"
 #include "manualmode_select.h"
+#include "joypad_control.h"
+
 
 Define_srsize define_srsize("data");
+Joypad_control joypad_control("data2");
 Depiction_loadgr depiction_loadgr(&define_srsize.enlargement_factor);
 Loadgr loadgr;
 Titlemenue_system titlemenue_system(&define_srsize.enlargement_factor);
