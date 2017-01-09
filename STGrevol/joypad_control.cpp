@@ -25,6 +25,9 @@ Joypad_control::Joypad_control(std::string filename_) {
 	}
 	catch (int error) {
 		std::cerr << "error " << error << std::endl;
+		ifs.close();
+		std::ofstream ofs(filename, std::ios_base::binary | std::ios_base::trunc);
+		ofs << PAD_INPUT_1 << PAD_INPUT_2 << PAD_INPUT_3 << PAD_INPUT_4 << PAD_INPUT_5;
 		std::exit(1);
 	}
 }
@@ -48,23 +51,23 @@ void Joypad_control::Get_keyconfig() {
 	}
 }
 
-void Joypad_control::Check_key(int button_, bool flag_) {
+void Joypad_control::Check_key(int button_, bool *flag_) {
 	if (GetJoypadInputState(DX_INPUT_PAD1) & button_) {
-		flag_ = true;
+		*flag_ = true;
 	}
 	else {
-		flag_ = false;
+		*flag_ = false;
 	}
 }
 
 void Joypad_control::Check_allkey() {
-	Check_key(button_shot, shot_flag);
-	Check_key(button_bomb, bomb_flag);
-	Check_key(button_slow, slow_flag);
-	Check_key(button_rightturn, rightturn_flag);
-	Check_key(button_leftturn, leftturn_flag);
-	Check_key(PAD_INPUT_UP, upkey_flag);
-	Check_key(PAD_INPUT_DOWN, downkey_flag);
-	Check_key(PAD_INPUT_RIGHT, rightkey_flag);
-	Check_key(PAD_INPUT_LEFT, leftkey_flag);
+	Check_key(button_shot, &shot_flag);
+	Check_key(button_bomb, &bomb_flag);
+	Check_key(button_slow, &slow_flag);
+	Check_key(button_rightturn, &rightturn_flag);
+	Check_key(button_leftturn, &leftturn_flag);
+	Check_key(PAD_INPUT_UP, &upkey_flag);
+	Check_key(PAD_INPUT_DOWN, &downkey_flag);
+	Check_key(PAD_INPUT_RIGHT, &rightkey_flag);
+	Check_key(PAD_INPUT_LEFT, &leftkey_flag);
 }
