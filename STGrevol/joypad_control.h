@@ -9,16 +9,12 @@ class Joypad_control {
 public:
 	Joypad_control(std::string filename_);
 	void Get_keyconfig();	//keyconfig‚Ì’¼Œã‚ÉŽg—p‚·‚é
-	void Check_button_shot();
-	void Check_button_bomb();
-	void Check_button_slow();
-	void Check_button_rightturn();
-	void Check_button_leftturn();
 	void Check_up_key();
 	void Check_down_key();
 	void Check_right_key();
 	void Check_left_key();
-	void Check_key();
+	void Check_key(int button_, bool flag_);
+	void Check_allkey();
 
 	int button_shot;
 	int button_bomb;
