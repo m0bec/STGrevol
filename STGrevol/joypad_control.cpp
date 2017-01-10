@@ -2,16 +2,17 @@
 
 Joypad_control::Joypad_control(std::string filename_) {
 	filename = filename_;
-	std::ifstream ifs(filename, std::ios_base::binary);
+	std::basic_ifstream<int> ifs(filename, std::ios_base::binary);
+	//std::ifstream ifs(filename, std::ios_base::binary);
 	try {
 		if (ifs.fail()) {
 			throw 99;
 		}
-		ifs.read(static_cast<char*>(static_cast<void*>(&button_shot)), sizeof(int));
-		ifs.read(static_cast<char*>(static_cast<void*>(&button_bomb)), sizeof(int));
-		ifs.read(static_cast<char*>(static_cast<void*>(&button_slow)), sizeof(int));
-		ifs.read(static_cast<char*>(static_cast<void*>(&button_rightturn)), sizeof(int));
-		ifs.read(static_cast<char*>(static_cast<void*>(&button_leftturn)), sizeof(int));
+		ifs.read(&button_shot, 1);
+		ifs.read(&button_bomb, 1);
+		ifs.read(&button_slow, 1);
+		ifs.read(&button_rightturn, 1);
+		ifs.read(&button_leftturn, 1);
 		shot_flag = false;
 		bomb_flag = false;
 		slow_flag = false;
@@ -30,12 +31,12 @@ Joypad_control::Joypad_control(std::string filename_) {
 		button_slow = PAD_INPUT_3;
 	    button_rightturn = PAD_INPUT_4;
 		button_leftturn = PAD_INPUT_5;
-		std::ofstream ofs(filename, std::ios_base::binary | std::ios_base::trunc);
-		ofs.write(static_cast<char*>(static_cast<void*>(&button_shot)), sizeof(button_shot));
-		ofs.write(static_cast<char*>(static_cast<void*>(&button_bomb)), sizeof(button_bomb));
-		ofs.write(static_cast<char*>(static_cast<void*>(&button_slow)), sizeof(button_slow));
-		ofs.write(static_cast<char*>(static_cast<void*>(&button_rightturn)), sizeof(button_rightturn));
-		ofs.write(static_cast<char*>(static_cast<void*>(&button_leftturn)), sizeof(button_leftturn));
+		std::basic_ofstream<int> ofs(filename, std::ios_base::binary | std::ios_base::trunc);
+		ofs.write(&button_shot, 1);
+		ofs.write(&button_bomb, 1);
+		ofs.write(&button_slow, 1);
+		ofs.write(&button_rightturn, 1);
+		ofs.write(&button_leftturn, 1);
 		std::exit(1);
 	}
 }
