@@ -22,15 +22,19 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			depiction_loadgr.Draw_loadgr();
 		}
 		else {
-			joypad_control.Check_allkey();
-			titlemenue_system.Run();
-			title.Drawgr();
-			startmode_select.Drawgr();
-			exitmode_select.Drawgr();
-			manualmode_select.Drawgr();
-			keyconmode_select.Drawgr();
+			switch (system_control.system_var) {
+			case 0:
+				joypad_control.Check_allkey();
+				titlemenue_system.Run();
+				title.Drawgr();
+				startmode_select.Drawgr();
+				exitmode_select.Drawgr();
+				manualmode_select.Drawgr();
+				keyconmode_select.Drawgr();
 
-			exitmode_select.Select_exit();
+				exitmode_select.Select_exit();
+				break;
+			}
 		}
 
 		// 裏画面の内容を表画面にコピーする
