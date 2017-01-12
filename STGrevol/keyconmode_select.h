@@ -25,7 +25,7 @@ public:
 	void Run();
 	
 private:
-	std::array<int, KEYCON_MENUE_NUMBER + 1> str_input_pad;
+	std::array<int, KEYCON_MODE_NUM + 1> str_input_pad;
 	int input_pad = 0;
 	int keycon_select_var = 0;
 	int *keycon_numgr;
