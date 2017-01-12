@@ -23,7 +23,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		}
 		else {
 			switch (system_control.system_var) {
-			case 0:
+			case 0:	//title
 				joypad_control.Check_allkey();
 				titlemenue_system.Run();
 				title.Drawgr();
@@ -33,6 +33,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				keyconmode_select.Drawgr();
 
 				exitmode_select.Select_exit();
+				break;
+
+			case 1:
 				break;
 			}
 		}
