@@ -17,11 +17,11 @@ void Titlemenue_system::Check_push_bottan() {
 
 void Titlemenue_system::Select_menue() {
 	if ((CheckHitKey(KEY_INPUT_UP) || *p_push_joyup_flag) && push_bottan_flag == false) {
-		select_menue_var++;
+		select_menue_var--;
 		push_bottan_flag = true;
 	}
 	if ((CheckHitKey(KEY_INPUT_DOWN) || *p_push_joydown_flag) && push_bottan_flag == false) {
-		select_menue_var--;
+		select_menue_var++;
 		push_bottan_flag = true;
 	}
 
