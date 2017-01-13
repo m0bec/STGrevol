@@ -36,6 +36,7 @@ void Keyconmode_select::Keycon_select() {
 }
 
 void Keyconmode_select::Keycon_mode() {
+	DrawRotaGraph2(0, 0, 0, 0, *p_define_srsize, 0, *keycon_backgr, true, false);
 	for (int i = 0; i < KEYCON_MODE_NUM + 1; i++) {
 		if (i < KEYCON_MODE_NUM) {
 			if (keycon_select_var == i) {

@@ -18,13 +18,13 @@ void Base_draw_startmenue::Drawgr() {
 		DrawRotaGraph2(static_cast<int>(draw_x * *p_define_srsize), static_cast<int>(draw_y * *p_define_srsize), 
 			static_cast<int>(rota_cx * *p_define_srsize), static_cast<int>(rota_cy * *p_define_srsize), *p_define_srsize, rota_radian, *p_gr, true, false);
 	}
-	else if (*menue_var == this_menue_var + 1 /*|| (this_menue_var == MAX_MENUE_NUMBER - 1 && *menue_var == 0)*/) {
+	else if (*menue_var == this_menue_var + 1 ) {
 		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 128);
 		DrawRotaGraph2(static_cast<int>(draw_x * *p_define_srsize), static_cast<int>(draw_y * *p_define_srsize - MOVE_MENUE_DIST), 
 			static_cast<int>(rota_cx * *p_define_srsize), static_cast<int>(rota_cy * *p_define_srsize), *p_define_srsize, rota_radian, *p_gr, true, false);
 		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 	}
-	else if (*menue_var == this_menue_var - 1 /*|| (this_menue_var == 0 && *menue_var == MAX_MENUE_NUMBER - 1)*/) {
+	else if (*menue_var == this_menue_var - 1) {
 		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 128);
 		DrawRotaGraph2(static_cast<int>(draw_x * *p_define_srsize), static_cast<int>(draw_y * *p_define_srsize + MOVE_MENUE_DIST), 
 			static_cast<int>(rota_cx * *p_define_srsize), static_cast<int>(rota_cy * *p_define_srsize), *p_define_srsize, rota_radian, *p_gr, true, false);

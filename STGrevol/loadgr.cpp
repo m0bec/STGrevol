@@ -8,5 +8,6 @@ void Loadgr::Synchronizing_loadgr() {
 	keycongr = LoadGraph("Graph/keyconfig.png");
 	manualgr = LoadGraph("Graph/manual.png");
 	keycon_num = LoadGraph("Graph/keycon_num.png");
+	keycon_backgr = LoadGraph("Graph/keycon_back.png");
 	SetUseASyncLoadFlag(false);
 }

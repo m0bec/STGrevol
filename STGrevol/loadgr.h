@@ -10,6 +10,7 @@ public:
 	int keycongr;
 	int manualgr;
 	int keycon_num;
+	int keycon_backgr;
 	
 private:
 	
