@@ -13,7 +13,8 @@ void Keyconmode_select::Getinput_param() {
 void Keyconmode_select::Judgeinput_param() {
 	for (int i = 4; i < 32; i++) {
 		if ((input_pad & (1 << i)) != 0) {
-			str_input_pad[keycon_select_var] = input_pad;
+			str_directinput_pad[keycon_select_var] = input_pad;
+			str_input_pad[keycon_select_var] = i;
 			break;
 		}
 	}

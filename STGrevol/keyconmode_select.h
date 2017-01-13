@@ -32,6 +32,7 @@ public:
 	
 private:
 	std::array<int, KEYCON_MODE_NUM + 1> str_input_pad;
+	std::array<int, KEYCON_MODE_NUM + 1> str_directinput_pad;
 	int input_pad;
 	int str_keyinput;
 	int keycon_select_var;
