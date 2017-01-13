@@ -22,9 +22,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			depiction_loadgr.Draw_loadgr();
 		}
 		else {
+			joypad_control.Check_allkey();
 			switch (system_control.system_var) {
 			case 0:	//title
-				joypad_control.Check_allkey();
 				titlemenue_system.Run();
 				title.Drawgr();
 				startmode_select.Drawgr();

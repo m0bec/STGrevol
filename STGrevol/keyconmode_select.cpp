@@ -7,31 +7,39 @@ void Keyconmode_select::Change_to_keyconmode() {
 }
 
 void Keyconmode_select::Getinput_param() {
-	input_pad = GetJoypadInputState(DX_INPUT_KEY_PAD1);
+	input_pad = GetJoypadInputState(DX_INPUT_PAD1);
 }
 
 void Keyconmode_select::Judgeinput_param() {
-	for (int i = 0; i < 28; i++) {
-		if (input_pad & (1 << i)) {
+	for (int i = 4; i < 32; i++) {
+		if ((input_pad & (1 << i)) != 0) {
 			str_input_pad[keycon_select_var] = input_pad;
 			break;
 		}
 	}
 }
 
-void Keyconmode_select::Keycon_select() {
-	if ((input_pad & PAD_INPUT_DOWN) == 1) {
-		keycon_select_var++;
+void Keyconmode_select::Check_push_bottan() {
+	if (CheckHitKey(KEY_INPUT_UP) == 0 && CheckHitKey(KEY_INPUT_DOWN) == 0 && *p_push_joyup_flag == false && *p_push_joydown_flag == false) {
+		input_flag = false;
 	}
-	else if ((input_pad & PAD_INPUT_UP) == 1) {
+}
+
+void Keyconmode_select::Keycon_select() {
+	if ((CheckHitKey(KEY_INPUT_DOWN) || *p_push_joydown_flag) && input_flag == false) {
+		keycon_select_var++;
+		input_flag = true;
+	}
+	if ((CheckHitKey(KEY_INPUT_UP) || *p_push_joyup_flag) && input_flag == false) {
 		keycon_select_var--;
+		input_flag = true;
 	}
 
 	if (keycon_select_var < 0) {
-		keycon_select_var = 0;
+		keycon_select_var = KEYCON_MODE_NUM;
 	}
 	else if (keycon_select_var > KEYCON_MODE_NUM) {
-		keycon_select_var = KEYCON_MODE_NUM;
+		keycon_select_var = 0;
 	}
 }
 
@@ -58,124 +66,6 @@ void Keyconmode_select::Keycon_mode() {
 				SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 			}
 		}
-		
-		/*switch (str_input_pad[i]) {
-		case 0:
-			DrawRectGraph(KEYCON_MODE_DRAW_X , KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 1:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 100, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 2:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 200, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 3:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 300, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 4:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 400, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 5:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 6:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 7:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 8:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 9:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 10:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 11:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 12:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 13:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 14:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 15:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 16:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 17:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 18:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 19:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 20:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 21:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 22:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 23:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 24:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 25:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 26:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 27:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-
-		case 28:
-			DrawRectGraph(KEYCON_MODE_DRAW_X, KEYCON_MODE_DRAW_Y + KEYCON_MDDE_MOVE_DIST * i, 0, 0, 100, 100, *keycon_numgr, true, false);
-			break;
-		}*/
 	}
 }
 
@@ -190,4 +80,5 @@ void Keyconmode_select::Run() {
 	Judgeinput_param();
 	Keycon_select();
 	Keycon_mode();
+	Check_push_bottan();
 }
