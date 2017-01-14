@@ -14,17 +14,14 @@ public:
 		keycon_exitgr = keycon_exitgr_;
 		p_system_var = p_system_var_;
 		p_push_joyshot_flag = p_push_joyshot_flag_;
-		p_longpush_joyshot_flag = p_longpush_joyshot_flag_;
 		keycon_backgr = keycon_backgr_;
 		p_push_joyup_flag = p_push_joyup_flag_;
 		p_push_joydown_flag = p_push_joydown_flag_;
 		input_pad = 0;
 		keycon_select_var = 0;
 		input_flag = false;
-		prev_chattering_flag = false;
 	}
 	void Initialization();
-	void Check_chattering();
 	void Change_to_keyconmode();
 	void Getinput_param();
 	void Judgeinput_param();
@@ -32,8 +29,6 @@ public:
 	void Keycon_select();
 	void Keycon_mode();
 	void Exit();
-
-	void Run_title();
 	void Run();
 	
 private:
@@ -43,13 +38,12 @@ private:
 	int str_keyinput;
 	int keycon_select_var;
 	int input_flag;
-	bool prev_chattering_flag;
 	int *keycon_numgr;
 	int *keycon_exitgr;
 	int *keycon_backgr;
 	int *p_system_var;
 	bool *p_push_joyshot_flag;
-	bool *p_longpush_joyshot_flag;
 	bool *p_push_joyup_flag;
 	bool *p_push_joydown_flag;
+	bool *p_longpush_joyshot_flag
 };

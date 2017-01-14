@@ -32,7 +32,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				manualmode_select.Drawgr();
 				keyconmode_select.Drawgr();
 
-				keyconmode_select.Change_to_keyconmode();
+				keyconmode_select.Run_title();
 				exitmode_select.Select_exit();
 				break;
 
