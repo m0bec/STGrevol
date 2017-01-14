@@ -69,8 +69,19 @@ void Joypad_control::Check_key(int button_, bool *flag_) {
 	}
 }
 
+void Joypad_control::Check_key_prev_chattering(int button_, bool *flag_, bool *keep_flag_) {
+	if ((GetJoypadInputState(DX_INPUT_PAD1) & button_) == button_) {
+		*flag_ = true;
+		*keep_flag_ = true;
+	}
+	else {
+		*flag_ = false;
+		*keep_flag_ = false;
+	}
+}
+
 void Joypad_control::Check_allkey() {
-	Check_key(button_shot, &shot_flag);
+	Check_key_prev_chattering(button_shot, &shot_flag, &shot_keep_flag);
 	Check_key(button_bomb, &bomb_flag);
 	Check_key(button_slow, &slow_flag);
 	Check_key(button_rightturn, &rightturn_flag);

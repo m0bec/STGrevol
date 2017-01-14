@@ -9,8 +9,8 @@ class Joypad_control {
 public:
 	Joypad_control(std::string filename_);
 	void Get_keyconfig();	//keyconfig‚Ì’¼Œã‚ÉŽg—p‚·‚é
-	void Check_key(int button_, bool *flag_);
-	void Check_allkey();
+	
+	
 
 	int button_shot;
 	int button_bomb;
@@ -28,8 +28,13 @@ public:
 	bool rightkey_flag;
 	bool leftkey_flag;
 
+	bool shot_keep_flag;
+
 private:
 	std::string filename;
+	void Check_key(int button_, bool *flag_);
+	void Check_key_prev_chattering(int button_, bool *flag_, bool *keep_flag_);
+	void Check_allkey();
 	int str_button_bin[BUTTON_NUM];
 	
 };
