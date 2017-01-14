@@ -21,6 +21,7 @@ public:
 		keycon_select_var = 0;
 		input_flag = false;
 	}
+	void Initialization();
 	void Change_to_keyconmode();
 	void Getinput_param();
 	void Judgeinput_param();

@@ -3,7 +3,13 @@
 void Keyconmode_select::Change_to_keyconmode() {
 	if (*menue_var == this_menue_var && (CheckHitKey(KEY_INPUT_Z) || CheckHitKey(KEY_INPUT_RETURN) || CheckHitKey(KEY_INPUT_SPACE) || *p_push_joyshot_flag == true)) {
 		*p_system_var = 1;
+		Initialization();
 	}
+}
+
+void Keyconmode_select::Initialization() {
+	keycon_select_var = 0;
+	input_flag = false;
 }
 
 void Keyconmode_select::Getinput_param() {
