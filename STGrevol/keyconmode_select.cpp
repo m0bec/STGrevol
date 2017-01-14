@@ -71,8 +71,8 @@ void Keyconmode_select::Keycon_mode() {
 }
 
 void Keyconmode_select::Exit() {
-	if (keycon_select_var == KEYCON_MODE_NUM) {
-		
+	if (keycon_select_var == KEYCON_MODE_NUM && (CheckHitKey(KEY_INPUT_Z) || CheckHitKey(KEY_INPUT_RETURN) || CheckHitKey(KEY_INPUT_SPACE) || *p_push_joyshot_flag == true)) {
+		*p_system_var = 0;
 	}
 }
 
@@ -80,6 +80,7 @@ void Keyconmode_select::Run() {
 	Getinput_param();
 	Judgeinput_param();
 	Keycon_select();
+	Exit();
 	Keycon_mode();
 	Check_push_bottan();
 }
