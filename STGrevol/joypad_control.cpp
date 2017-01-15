@@ -80,6 +80,12 @@ void Joypad_control::Check_key_prev_chattering(int button_, bool *flag_, bool *k
 	}
 }
 
+void Joypad_control::Prev_chattering() {
+	if (shot_keep_flag == false) {
+		prev_chattering_flag = false;
+	}
+}
+
 void Joypad_control::Check_allkey() {
 	Check_key_prev_chattering(button_shot, &shot_flag, &shot_keep_flag);
 	Check_key(button_bomb, &bomb_flag);
@@ -90,4 +96,6 @@ void Joypad_control::Check_allkey() {
 	Check_key(PAD_INPUT_DOWN, &downkey_flag);
 	Check_key(PAD_INPUT_RIGHT, &rightkey_flag);
 	Check_key(PAD_INPUT_LEFT, &leftkey_flag);
+
+	Prev_chattering();
 }

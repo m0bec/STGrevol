@@ -9,7 +9,7 @@
 
 class Keyconmode_select : public Base_draw_startmenue {
 public:
-	Keyconmode_select(bool *p_push_joydown_flag_, int *p_system_var_, double *define_srsize_, int *gr_, int draw_x_, int draw_y_, int rota_cx_, int rota_cy_, double rota_radian_, int *menue_var_, int this_menue_var_, int *keycon_numgr_, int *keycon_exitgr_, int *keycon_backgr_, bool *p_push_joyshot_flag_, bool *p_longpush_joyshot_flag_, bool *p_push_joyup_flag_) : Base_draw_startmenue(define_srsize_, gr_, draw_x_,  draw_y_,  rota_cx_,  rota_cy_,  rota_radian_,  menue_var_,  this_menue_var_) {
+	Keyconmode_select(bool *p_push_joydown_flag_, int *p_system_var_, double *define_srsize_, int *gr_, int draw_x_, int draw_y_, int rota_cx_, int rota_cy_, double rota_radian_, int *menue_var_, int this_menue_var_, int *keycon_numgr_, int *keycon_exitgr_, int *keycon_backgr_, bool *p_push_joyshot_flag_, bool *p_longpush_joyshot_flag_, bool *p_push_joyup_flag_, bool *p_prev_chattering_flag_) : Base_draw_startmenue(define_srsize_, gr_, draw_x_,  draw_y_,  rota_cx_,  rota_cy_,  rota_radian_,  menue_var_,  this_menue_var_) {
 		keycon_numgr = keycon_numgr_;
 		keycon_exitgr = keycon_exitgr_;
 		p_system_var = p_system_var_;
@@ -21,10 +21,10 @@ public:
 		input_pad = 0;
 		keycon_select_var = 0;
 		input_flag = false;
-		prev_chattering_flag = false;
+		p_prev_chattering_flag = p_prev_chattering_flag_;
 	}
 	void Initialization();
-	void Check_chattering();
+	//void Check_chattering();
 	void Change_to_keyconmode();
 	void Getinput_param();
 	void Judgeinput_param();
@@ -43,7 +43,7 @@ private:
 	int str_keyinput;
 	int keycon_select_var;
 	int input_flag;
-	bool prev_chattering_flag;
+	bool *p_prev_chattering_flag;
 	int *keycon_numgr;
 	int *keycon_exitgr;
 	int *keycon_backgr;

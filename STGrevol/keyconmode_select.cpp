@@ -1,17 +1,17 @@
 #include "keyconmode_select.h"
 
 void Keyconmode_select::Change_to_keyconmode() {
-	if (*menue_var == this_menue_var && prev_chattering_flag == false && (CheckHitKey(KEY_INPUT_Z) || CheckHitKey(KEY_INPUT_RETURN) || CheckHitKey(KEY_INPUT_SPACE) || *p_push_joyshot_flag == true)) {
+	if (*menue_var == this_menue_var && *p_prev_chattering_flag == false && (CheckHitKey(KEY_INPUT_Z) || CheckHitKey(KEY_INPUT_RETURN) || CheckHitKey(KEY_INPUT_SPACE) || *p_push_joyshot_flag == true)) {
 		*p_system_var = 1;
 		Initialization();
 	}
 }
 
-void Keyconmode_select::Check_chattering() {
+/*void Keyconmode_select::Check_chattering() {
 	if (*p_longpush_joyshot_flag == false) {
 		prev_chattering_flag = false;
 	}
-}
+}*/
 
 void Keyconmode_select::Initialization() {
 	keycon_select_var = 0;
@@ -85,13 +85,13 @@ void Keyconmode_select::Keycon_mode() {
 void Keyconmode_select::Exit() {
 	if (keycon_select_var == KEYCON_MODE_NUM && (CheckHitKey(KEY_INPUT_Z) || CheckHitKey(KEY_INPUT_RETURN) || CheckHitKey(KEY_INPUT_SPACE) || *p_push_joyshot_flag == true)) {
 		*p_system_var = 0;
-		prev_chattering_flag = true;
+		*p_prev_chattering_flag = true;
 	}
 }
 
 void Keyconmode_select::Run_title() {
 	Change_to_keyconmode();
-	Check_chattering();
+	//Check_chattering();
 }
 
 void Keyconmode_select::Run() {

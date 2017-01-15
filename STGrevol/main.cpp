@@ -23,6 +23,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		}
 		else {
 			joypad_control.Check_allkey();
+
 			switch (system_control.system_var) {
 			case 0:	//title
 				titlemenue_system.Run();

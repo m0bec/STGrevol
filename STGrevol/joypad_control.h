@@ -10,6 +10,7 @@ public:
 	Joypad_control(std::string filename_);
 	void Get_keyconfig();	//keyconfig‚Ì’¼Œã‚ÉŽg—p‚·‚é
 	void Check_allkey();
+	void Prev_chattering();
 	
 	int button_shot;
 	int button_bomb;
@@ -27,6 +28,7 @@ public:
 	bool rightkey_flag;
 	bool leftkey_flag;
 
+	bool prev_chattering_flag;
 	bool shot_keep_flag;
 
 private:
